@@ -1,4 +1,4 @@
-import React,{PureComponent} from 'react';
+import React,{ Component } from 'react';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -11,11 +11,12 @@ const TYPE_MAP = {
   button: Radio.Button
 };
 
-export default class extends PureComponent{
+export default class extends Component{
   /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
     items: PropTypes.array,
+    template: PropTypes.func,
     type: PropTypes.string,
     onChange: PropTypes.func,
   };
@@ -23,6 +24,7 @@ export default class extends PureComponent{
   static defaultProps = {
     items: [],
     type: 'radio',
+    template: null,
     onChange: noop
   };
   /*===properties end===*/
@@ -34,15 +36,15 @@ export default class extends PureComponent{
   };
 
   render(){
-    const { className, items, type, onChange, ...props } = this.props;
+    const { className, items, type, onChange, template, ...props } = this.props;
     const Component = TYPE_MAP[ type ];
     return (
       <Radio.Group {...props} onChange={ this._onChange } className={classNames('react-ant-radio-group',className)}>
       {
-        (items.length > 0) && items.map((item)=>{
-          return (
+        (items.length > 0) && items.map((item, index)=>{
+          return template ? template( item, index ) : (
             <Component className="react-ant-radio-item" key={item.value} value={item.value}>{ item.label }</Component>
-          )
+          );
         })
       }
       </Radio.Group>

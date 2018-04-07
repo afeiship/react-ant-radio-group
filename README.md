@@ -8,6 +8,7 @@
   static propTypes = {
     className: PropTypes.string,
     items: PropTypes.array,
+    template: PropTypes.func,
     type: PropTypes.string,
     onChange: PropTypes.func,
   };
@@ -15,6 +16,7 @@
   static defaultProps = {
     items: [],
     type: 'radio',
+    template: null,
     onChange: noop
   };
   
@@ -45,7 +47,12 @@ class App extends React.Component{
   render(){
     return (
       <div className="hello-react-ant-radio-group">
+      <p>
         <ReactAntRadioGroup onChange={this._onChange} items={ this.state.items } ref='rc' />
+      </p>
+      <p>
+        <ReactAntRadioGroup type='button' onChange={this._onChange} items={ this.state.items } ref='rc2' />
+      </p>
     </div>
     );
   }
