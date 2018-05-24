@@ -21,7 +21,7 @@ class App extends React.Component{
   }
 
   _onChange = e => {
-    console.log(e);
+    console.log(e.target.value);
   };
 
   render(){
