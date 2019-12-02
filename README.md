@@ -1,70 +1,56 @@
 # react-ant-radio-group
 > React ant radio group.
 
+## installation
+```shell
+npm install -S @feizheng/react-ant-radio-group
+```
+## properties
+| property        | type | description |
+| --------------- | ---- | ----------- |
+| className       | -    | -           |
+| value           | -    | -           |
+| onChange        | -    | -           |
 
-## properties:
-```javascript
+## usage
+1. import css
+  ```scss
+  @import "~@feizheng/react-ant-radio-group/dist/style.scss";
 
-  static propTypes = {
-    className: PropTypes.string,
-    items: PropTypes.array,
-    template: PropTypes.func,
-    type: PropTypes.string,
-    onChange: PropTypes.func,
-  };
-
-  static defaultProps = {
-    items: [],
-    type: 'radio',
-    template: null,
-    onChange: noop
-  };
+  // customize your styles:
+  $react-ant-radio-group-options: ()
+  ```
+2. import js
+  ```js
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import ReactAntRadioGroup from '@feizheng/react-ant-radio-group';
   
-```
-
-## usage:
-```jsx
-
-// install: npm install afeiship/react-ant-radio-group --save
-// import : import ReactAntRadioGroup from 'react-ant-radio-group'
-
-class App extends React.Component{
-  state = {
-    items: nx.antBuildItems(['op1','op2','op3'],true)
-  };
-
-  constructor(props){
-    super(props);
-    window.demo = this;
-    window.refs = this.refs;
-    window.rc = this.refs.rc;
+  // your app:
+  class App extends React.Component{
+    render(){
+      return (
+        <ReactAntRadioGroup />
+      )
+    }
   }
 
-  _onChange = e => {
-    console.log(e);
-  };
+  // render to dom:
+  ReactDOM.render(<App/>, document.getElementById('app'));
+  ```
 
-  render(){
-    return (
-      <div className="hello-react-ant-radio-group">
-      <div>
-        <ReactAntRadioGroup onChange={this._onChange} items={ this.state.items } ref='rc' />
-      </div>
-      <div>
-        <ReactAntRadioGroup type='button' onChange={this._onChange} items={ this.state.items } ref='rc2' />
-      </div>
-    </div>
-    );
-  }
-}
+## documentation
+- https://afeiship.github.io/react-ant-radio-group/
 
-```
+## resources
+- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
+- https://www.valentinog.com/blog/react-webpack-babel/
+- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
+- https://testing-library.com/docs/react-testing-library/api
 
-## customize style:
-```scss
-// customize your styles:
-$react-ant-radio-group-options:(
-);
-
-@import '~node_modules/react-ant-radio-group/style.scss';
-```
+## todos
+- [ ] Add: semver number for every build files.
+- [ ] Add: need output css files.
+- [ ] Add: PWA support for docs.
+- [ ] Add: source.map file for dist(`you can upload for production debug`).
+- [ ] BUG: npm run dev will clean dist.

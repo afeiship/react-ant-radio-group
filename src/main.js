@@ -1,2 +1,2 @@
-import ReactAntRadioGroup from 'components/react-ant-radio-group';
+import ReactAntRadioGroup from './components';
 export default ReactAntRadioGroup;
