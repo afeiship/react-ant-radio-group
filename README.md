@@ -11,6 +11,8 @@ npm install -S @feizheng/react-ant-radio-group
 | className       | -    | -           |
 | value           | -    | -           |
 | onChange        | -    | -           |
+| items        | -    | -           |
+| template        | -    | -           |
 
 ## usage
 1. import css
@@ -22,35 +24,35 @@ npm install -S @feizheng/react-ant-radio-group
   ```
 2. import js
   ```js
-  import React from 'react';
+  import ReactAntRadioGroup from '../src/main';
   import ReactDOM from 'react-dom';
-  import ReactAntRadioGroup from '@feizheng/react-ant-radio-group';
-  
-  // your app:
-  class App extends React.Component{
-    render(){
+  import React from 'react';
+  import './assets/style.scss';
+
+  class App extends React.Component {
+    state = {
+      items: [
+        {
+          value: 'k1',
+          label: 'k111'
+        },
+        {
+          value: 'k2',
+          label: 'k222'
+        }
+      ]
+    };
+    render() {
       return (
-        <ReactAntRadioGroup />
-      )
+        <div className="app-container">
+          <ReactAntRadioGroup items={this.state.items} />
+        </div>
+      );
     }
   }
 
-  // render to dom:
-  ReactDOM.render(<App/>, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
   ```
 
 ## documentation
 - https://afeiship.github.io/react-ant-radio-group/
-
-## resources
-- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
-- https://www.valentinog.com/blog/react-webpack-babel/
-- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
-- https://testing-library.com/docs/react-testing-library/api
-
-## todos
-- [ ] Add: semver number for every build files.
-- [ ] Add: need output css files.
-- [ ] Add: PWA support for docs.
-- [ ] Add: source.map file for dist(`you can upload for production debug`).
-- [ ] BUG: npm run dev will clean dist.
