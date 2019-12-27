@@ -21,7 +21,7 @@ export default class extends Component {
     className: PropTypes.string,
     items: PropTypes.array,
     template: PropTypes.func,
-    value: PropTypes.object,
+    value: PropTypes.any,
     onChange: PropTypes.func
   };
 
