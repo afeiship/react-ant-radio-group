@@ -1,4 +1,4 @@
-import baseConfig from '.';
+import baseConfig from './base';
 import merge from 'webpack-merge';
 import {
   configs,

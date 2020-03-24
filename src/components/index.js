@@ -15,14 +15,30 @@ const DEFAULT_TEMPLATE = ({ item }) => {
   );
 };
 
-export default class extends Component {
+export default class ReactAntRadioGroup extends Component {
   static displayName = CLASS_NAME;
+  static version = '__VERSION__';
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
-    items: PropTypes.array,
-    template: PropTypes.func,
+    /**
+     * Default value.
+     */
     value: PropTypes.any,
-    onChange: PropTypes.func
+    /**
+     * The change handler.
+     */
+    onChange: PropTypes.func,
+    /**
+     * Value/label pairs.
+     */
+    items: PropTypes.array,
+    /**
+     * The template.
+     */
+    template: PropTypes.func
   };
 
   static defaultProps = {
