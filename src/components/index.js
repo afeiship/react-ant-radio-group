@@ -47,9 +47,7 @@ export default class ReactAntRadioGroup extends Component {
 
   get childView() {
     const { items, template } = this.props;
-    return items.map((item, index) => {
-      return template({ item, index });
-    });
+    return items.map((item, index) => template({ item, index }));
   }
 
   render() {
