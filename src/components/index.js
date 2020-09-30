@@ -6,9 +6,10 @@ import React, { Component } from 'react';
 
 const CLASS_NAME = 'react-ant-radio-group';
 const DEFAULT_TEMPLATE = ({ item }) => {
+  const { value, label, ...props } = item;
   return (
-    <Radio key={item.value} value={item.value}>
-      {item.label}
+    <Radio key={value} value={value} {...props}>
+      {label}
     </Radio>
   );
 };
