@@ -18,7 +18,7 @@ npm install -S @jswork/react-ant-radio-group
 | value     | any    | false    | -       | Default value.                        |
 | onChange  | func   | false    | noop    | The change handler.                   |
 | items     | array  | false    | []      | Value/label pairs.                    |
-| template  | func   | false    | -       | The template.                         |
+| template  | func   | false    | noop    | The template.                         |
 
 
 ## usage
@@ -60,14 +60,6 @@ npm install -S @jswork/react-ant-radio-group
         <ReactDemokit
           className="p-3 app-container"
           url="https://github.com/afeiship/react-ant-radio-group">
-          <div className="is-item mb-4">
-            <ReactAntRadioGroup
-              onChange={(e) => {
-                console.log(e.target.value);
-              }}
-              items={this.state.items}
-            />
-          </div>
 
           <div className="is-item">
             <ReactAntRadioGroup
