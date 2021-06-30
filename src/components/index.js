@@ -3,16 +3,9 @@ import { Radio } from 'antd';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import ReactList from '@jswork/react-list';
 
 const CLASS_NAME = 'react-ant-radio-group';
-const DEFAULT_TEMPLATE = ({ item }) => {
-  const { value, label, ...props } = item;
-  return (
-    <Radio key={value} value={value} {...props}>
-      {label}
-    </Radio>
-  );
-};
 
 export default class ReactAntRadioGroup extends Component {
   static displayName = CLASS_NAME;
@@ -42,14 +35,9 @@ export default class ReactAntRadioGroup extends Component {
 
   static defaultProps = {
     items: [],
-    template: DEFAULT_TEMPLATE,
+    template: noop,
     onChange: noop
   };
-
-  get childView() {
-    const { items, template } = this.props;
-    return items.map((item, index) => template({ item, index }));
-  }
 
   render() {
     const { className, items, template, ...props } = this.props;
@@ -58,9 +46,8 @@ export default class ReactAntRadioGroup extends Component {
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
         {...props}>
-        {this.childView}
+        <ReactList items={items} template={template} />
       </Radio.Group>
     );
   }
 }
-

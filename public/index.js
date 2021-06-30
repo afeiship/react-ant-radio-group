@@ -24,14 +24,6 @@ class App extends React.Component {
       <ReactDemokit
         className="p-3 app-container"
         url="https://github.com/afeiship/react-ant-radio-group">
-        <div className="is-item mb-4">
-          <ReactAntRadioGroup
-            onChange={(e) => {
-              console.log(e.target.value);
-            }}
-            items={this.state.items}
-          />
-        </div>
 
         <div className="is-item">
           <ReactAntRadioGroup
