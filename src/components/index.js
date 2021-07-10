@@ -46,7 +46,7 @@ export default class ReactAntRadioGroup extends Component {
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
         {...props}>
-        <ReactList items={items} template={template} />
+        <ReactList virtual items={items} template={template} />
       </Radio.Group>
     );
   }

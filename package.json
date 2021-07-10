@@ -54,6 +54,8 @@
     "@babel/preset-react": "^7.10.4",
     "@babel/register": "^7.11.5",
     "@jswork/next-replace-in-file": "^1.0.0",
+    "@jswork/rctpl-ant-radio": "^1.0.1",
+    "@jswork/rctpl-ant-radio-button": "^1.0.1",
     "@jswork/react-demokit": "^1.0.2",
     "@jswork/react-markdown-props": "^1.0.1",
     "@jswork/webpack-lib-kits": "^1.0.2",
@@ -84,7 +86,7 @@
   },
   "dependencies": {
     "@jswork/noop": "^1.0.0",
-    "@jswork/react-list": "^1.0.3",
+    "@jswork/react-list": "^1.0.5",
     "classnames": "^2.2.6"
   },
   "publishConfig": {
