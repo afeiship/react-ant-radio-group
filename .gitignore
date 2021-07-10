@@ -12,3 +12,4 @@ package-lock.json
 .idea
 .vscode
 .history
+dist
