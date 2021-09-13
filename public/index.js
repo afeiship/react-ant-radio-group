@@ -1,7 +1,6 @@
 import ReactDemokit from '@jswork/react-demokit';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RctplAntRadio from '@jswork/rctpl-ant-radio';
 import RctplAntRadioButton from '@jswork/rctpl-ant-radio-button';
 import ReactAntRadioGroup from '../src/main';
 import { Radio } from 'antd';
