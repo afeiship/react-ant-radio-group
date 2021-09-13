@@ -12,13 +12,13 @@ npm install -S @jswork/react-ant-radio-group
 ```
 
 ## properties
-| Name      | Type   | Required | Default | Description                           |
-| --------- | ------ | -------- | ------- | ------------------------------------- |
-| className | string | false    | -       | The extended className for component. |
-| value     | any    | false    | -       | Default value.                        |
-| onChange  | func   | false    | noop    | The change handler.                   |
-| items     | array  | false    | []      | Value/label pairs.                    |
-| template  | func   | false    | noop    | The template.                         |
+| Name      | Type   | Required | Default       | Description                           |
+| --------- | ------ | -------- | ------------- | ------------------------------------- |
+| className | string | false    | -             | The extended className for component. |
+| value     | any    | false    | -             | Default value.                        |
+| onChange  | func   | false    | noop          | The change handler.                   |
+| items     | array  | false    | []            | Value/label pairs.                    |
+| template  | func   | false    | RctplAntRadio | The template.                         |
 
 
 ## usage
@@ -37,7 +37,6 @@ npm install -S @jswork/react-ant-radio-group
   import ReactDemokit from '@jswork/react-demokit';
   import React from 'react';
   import ReactDOM from 'react-dom';
-  import RctplAntRadio from '@jswork/rctpl-ant-radio';
   import RctplAntRadioButton from '@jswork/rctpl-ant-radio-button';
   import ReactAntRadioGroup from '@jswork/react-ant-radio-group';
   import { Radio } from 'antd';
@@ -45,7 +44,16 @@ npm install -S @jswork/react-ant-radio-group
 
   class App extends React.Component {
     state = {
-      items2: [],
+      items2: [
+        {
+          value: 'k2-1',
+          label: 'k2111'
+        },
+        {
+          value: 'k2-2',
+          label: 'k2222'
+        }
+      ],
       items: [
         {
           value: 'k1',
@@ -84,7 +92,6 @@ npm install -S @jswork/react-ant-radio-group
                   console.log('radio tmpl:', e.target.value);
                 }}
                 items={this.state.items}
-                template={RctplAntRadio}
               />
             </div>
 
