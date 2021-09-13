@@ -9,7 +9,16 @@ import './assets/style.scss';
 
 class App extends React.Component {
   state = {
-    items2: [],
+    items2: [
+      {
+        value: 'k2-1',
+        label: 'k2111'
+      },
+      {
+        value: 'k2-2',
+        label: 'k2222'
+      }
+    ],
     items: [
       {
         value: 'k1',
@@ -48,7 +57,6 @@ class App extends React.Component {
                 console.log('radio tmpl:', e.target.value);
               }}
               items={this.state.items}
-              template={RctplAntRadio}
             />
           </div>
 

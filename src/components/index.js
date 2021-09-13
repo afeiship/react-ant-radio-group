@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactList from '@jswork/react-list';
+import RctplAntRadio from '@jswork/rctpl-ant-radio';
 
 const CLASS_NAME = 'react-ant-radio-group';
 
@@ -35,7 +36,7 @@ export default class ReactAntRadioGroup extends Component {
 
   static defaultProps = {
     items: [],
-    template: noop,
+    template: RctplAntRadio,
     onChange: noop
   };
 
