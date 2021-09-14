@@ -43,6 +43,9 @@ class App extends React.Component {
               onChange={(e) => {
                 console.log('radio button tmpl:', e.target.value);
               }}
+              onSearch={(e) => {
+                console.log('search event:', e.target.value);
+              }}
               items={this.state.items}
               template={RctplAntRadioButton}
             />

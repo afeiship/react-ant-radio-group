@@ -25,6 +25,10 @@ export default class ReactAntRadioGroup extends Component {
      */
     onChange: PropTypes.func,
     /**
+     * The handle when search confirm.
+     */
+    onSearch: PropTypes.func,
+    /**
      * Value/label pairs.
      */
     items: PropTypes.array,
@@ -37,15 +41,24 @@ export default class ReactAntRadioGroup extends Component {
   static defaultProps = {
     items: [],
     template: RctplAntRadio,
-    onChange: noop
+    onChange: noop,
+    onSearch: noop
+  };
+
+  handleChange = (inEvent) => {
+    const { onChange, onSearch } = this.props;
+    onChange(inEvent);
+    onSearch(inEvent);
   };
 
   render() {
-    const { className, items, template, ...props } = this.props;
+    const { className, items, template, onChange, onSearch, ...props } =
+      this.props;
     return (
       <Radio.Group
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}
+        onChange={this.handleChange}
         {...props}>
         <ReactList virtual items={items} template={template} />
       </Radio.Group>
