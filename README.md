@@ -17,6 +17,7 @@ npm install -S @jswork/react-ant-radio-group
 | className | string | false    | -             | The extended className for component. |
 | value     | any    | false    | -             | Default value.                        |
 | onChange  | func   | false    | noop          | The change handler.                   |
+| onSearch  | func   | false    | noop          | The handle when search confirm.       |
 | items     | array  | false    | []            | Value/label pairs.                    |
 | template  | func   | false    | RctplAntRadio | The template.                         |
 
@@ -78,6 +79,9 @@ npm install -S @jswork/react-ant-radio-group
                 defaultValue={'k1'}
                 onChange={(e) => {
                   console.log('radio button tmpl:', e.target.value);
+                }}
+                onSearch={(e) => {
+                  console.log('search event:', e.target.value);
                 }}
                 items={this.state.items}
                 template={RctplAntRadioButton}
